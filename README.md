@@ -1,1 +1,1 @@
-An attempt at learning some Rust basics with the Manning course found here: (https://www.manning.com/liveprojectseries/four-small-algorithm-projects-with-rust-ser)[Four Small Algorithm Projects with Rust]
+An attempt at learning some Rust basics with the Manning course found here: [Four Small Algorithm Projects with Rust](https://www.manning.com/liveprojectseries/four-small-algorithm-projects-with-rust-ser)
