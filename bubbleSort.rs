@@ -102,19 +102,49 @@ fn print_vec(vec: &Vec<i32>, num_items: i32) {
 
 // Use bubble sort to sort the vector.
 fn bubble_sort(vec: &mut Vec<i32>) {
-    length = vec.len();
-    i = 0;
-    while i < length {
-        if vec[i] > vec[i+1]{
-            temp = vec[i];
-            vec[i] = vec[i+1];
-            vec[i+1] = temp
+    let length = vec.len();
+    let i = 0;
+    let temp;
+    let sorted = false;
+    while sorted != true {
+        sorted = true;
+        while i < length {
+            if vec[i] > vec[i+1]{
+                sorted = false;
+                temp = vec[i];
+                vec[i] = vec[i+1];
+                vec[i+1] = temp
+            }
+            i = i + 1;
         }
-        i = i + 1;
     }
+
 }
 
 // Verify that the Vec is sorted.
 fn check_sorted(vec: &Vec<i32>) {
+    let flag = true;
+    let length = vec.len();
+    let i = 0;
+    while i < length {
+        if vec[i] > vec[i+1] {
+            flag = false;
+        }
+    }
+    if flag == false {
+        println("Vec is not sorted");
+    }
+    else {
+        println("Vec is sorted");
+    }
+}
 
+fn main() {
+    let num_items = get_i32(io::stdin("How many items in vector?: "));
+    let max = get_i32(io::stdin("Maximum value for each item in vector?: "));
+    let vec = make_random_vec(num_items, max);
+    print_vec(vec);
+    bubble_sort(vec);
+    print_vec(vec);
+    check_sorted(vec);
 }
