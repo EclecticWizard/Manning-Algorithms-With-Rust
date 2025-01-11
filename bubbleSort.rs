@@ -132,16 +132,20 @@ fn check_sorted(vec: &Vec<i32>) {
         }
     }
     if flag == false {
-        println("Vec is not sorted");
+        println!("Vec is not sorted");
     }
     else {
-        println("Vec is sorted");
+        println!("Vec is sorted");
     }
 }
 
 fn main() {
-    let num_items = get_i32(io::stdin("How many items in vector?: "));
-    let max = get_i32(io::stdin("Maximum value for each item in vector?: "));
+    println!("How many items in vector?: ");
+    let num_items = io::stdin();
+    num_items = get_i32(num_items);
+    println!("Maximum value for each item in vector?:" );
+    let max = (io::stdin());
+    max = get_i32(max);
     let vec = make_random_vec(num_items, max);
     print_vec(vec);
     bubble_sort(vec);
